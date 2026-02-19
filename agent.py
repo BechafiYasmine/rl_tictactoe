@@ -34,7 +34,7 @@ class QLearningAgent:
 
         board = list(state)
 
-        # 1️⃣ Try to WIN
+        # 1️ Try to WIN
         for move in available_moves:
 
             board[move] = self.player
@@ -45,7 +45,7 @@ class QLearningAgent:
 
             board[move] = 0
 
-        # 2️⃣ Try to BLOCK human
+        # 2️ Try to BLOCK human
         for move in available_moves:
 
             board[move] = -self.player
@@ -56,11 +56,11 @@ class QLearningAgent:
 
             board[move] = 0
 
-        # 3️⃣ Explore
+        # 3️  Explore
         if random.random() < self.epsilon:
             return random.choice(available_moves)
 
-        # 4️⃣ Exploit Q-table
+        # 4️  Exploit Q-table
         q_vals = {a: self.get_q(state, a) for a in available_moves}
 
         max_q = max(q_vals.values())
