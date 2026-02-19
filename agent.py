@@ -15,9 +15,9 @@ class QLearningAgent:
 
         self.q_table = {}
 
-    # -------------------------
+    
     # Q TABLE
-    # -------------------------
+   
 
     def get_q(self, state, action):
 
@@ -26,9 +26,9 @@ class QLearningAgent:
 
         return self.q_table[state][action]
 
-    # -------------------------
+    
     # SMART MOVE
-    # -------------------------
+   
 
     def choose_move(self, state, available_moves):
 
@@ -69,9 +69,9 @@ class QLearningAgent:
 
         return random.choice(best_moves)
 
-    # -------------------------
+    
     # LEARNING
-    # -------------------------
+    
 
     def update_q(self, state, action, reward, next_state, next_moves):
 
@@ -90,9 +90,9 @@ class QLearningAgent:
 
         self.q_table[state][action] = new_q
 
-    # -------------------------
+  
     # SAVE / LOAD
-    # -------------------------
+   
 
     def save_q(self, file="q_table.pkl"):
 
@@ -106,9 +106,9 @@ class QLearningAgent:
             with open(file, "rb") as f:
                 self.q_table = pickle.load(f)
 
-    # -------------------------
+    
     # CHECK WIN
-    # -------------------------
+    
 
     def _is_winner(self, board, player):
 
