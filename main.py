@@ -1,4 +1,6 @@
 import random
+from train import *
+import gui  # runs the GUI after training
 
 from game import TicTacToe
 from agent import RandomAgent
